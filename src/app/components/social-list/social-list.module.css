@@ -1,0 +1,39 @@
+.main {
+  width: 100%;
+  max-width: 800px;
+  background: #191B1F;
+  border-radius: 60px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+  margin: 15px 30px;
+}
+
+.item:first-child {
+  margin-top: 30px;
+}
+
+.item:last-child {
+  margin-bottom: 30px;
+}
+
+@media (max-width: 800px) {
+  .main {
+    border-radius: 0;
+  }
+
+  .item {
+    margin: 15px 15px;
+  }
+
+  .item:first-child {
+    margin-top: 30px;
+  }
+
+  .item:last-child {
+    margin-bottom: 30px;
+  }
+}
