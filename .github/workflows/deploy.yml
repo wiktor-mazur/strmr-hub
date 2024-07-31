@@ -24,6 +24,6 @@ jobs:
           ftp_username: ${{ secrets.FTP_USERNAME }}
           ftp_password: ${{ secrets.FTP_PASSWORD }}
           local_source_dir: "./"
-          dist_target_dir: ${{ $GITHUB_SHA }}
+          dist_target_dir: "versions/${{ $GITHUB_SHA }}"
           delete: "true"
           exclude: "'^logs/' '^README.md'"
