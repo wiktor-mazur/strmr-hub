@@ -14,7 +14,7 @@ jobs:
         with:
           node-version: '22.x'
       - name: Installing dependencies
-        run: npm i
+        run: npm i --production
       - name: Build
         run: npm run build
       - name: Deploy to server
