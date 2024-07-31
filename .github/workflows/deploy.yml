@@ -27,3 +27,15 @@ jobs:
           dist_target_dir: "versions/${{ github.sha }}"
           delete: "true"
           exclude: "'^logs/' '^README.md' '^node_modules/' '^.git/' '^src/'"
+      - name: Switch to new version
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            cd domains/taazy.pl
+            rm public_nodejs
+            ln -s versions/${{ github.sha }} public_nodejs
+            devil www restart taazy.pl
