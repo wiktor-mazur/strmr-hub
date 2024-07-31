@@ -17,15 +17,6 @@ jobs:
         run: npm i
       - name: Build
         run: npm run build
-#      - name: Deploy to server
-#        uses: SamKirkland/FTP-Deploy-Action@4.1.0
-#        with:
-#          server: ${{ secrets.FTP_SERVER }}
-#          username: ${{ secrets.FTP_USERNAME }}
-#          password: ${{ secrets.FTP_PASSWORD }}
-#          local-dir: /
-#          server-dir: /test/
-#          protocol: 'ftps'
       - name: Deploy to server
         uses: kevinpainchaud/simple-ftp-deploy-action@v1.2.1
         with:
@@ -33,6 +24,6 @@ jobs:
           ftp_username: ${{ secrets.FTP_USERNAME }}
           ftp_password: ${{ secrets.FTP_PASSWORD }}
           local_source_dir: "./"
-          dist_target_dir: "www/my-app"
+          dist_target_dir: ${{ $GITHUB_SHA }}
           delete: "true"
           exclude: "'^logs/' '^README.md'"
