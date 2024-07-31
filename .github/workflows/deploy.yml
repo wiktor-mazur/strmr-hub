@@ -13,10 +13,10 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '22.x'
-#      - name: Installing dependencies
-#        run: npm i
-#      - name: Build
-#        run: npm run build
+      - name: Installing dependencies
+        run: npm i
+      - name: Build
+        run: npm run build
       - uses: montudor/action-zip@v1
         with:
           args: zip -qq -r dist/${{ github.sha }}.zip . -x node_modules/**\* .git/**\* src/**\* .github/**\*
@@ -28,5 +28,5 @@ jobs:
           ftp_password: ${{ secrets.FTP_PASSWORD }}
           local_source_dir: "./dist/"
           dist_target_dir: "/versions/"
-          delete: "true"
-          exclude: "'^logs/' '^README.md' '^node_modules/' '^.git/' '^src/' '^.github'"
+          delete: "false"
+          exclude: "'.gitkeep'"
