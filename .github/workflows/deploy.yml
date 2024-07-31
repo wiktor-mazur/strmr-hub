@@ -19,14 +19,14 @@ jobs:
 #        run: npm run build
       - uses: montudor/action-zip@v1
         with:
-          args: zip -qq -r versions/${{ github.sha }}.zip . -x node_modules/**\* .git/**\* src/**\* .github/**\*
+          args: zip -qq -r dist/${{ github.sha }}.zip . -x node_modules/**\* .git/**\* src/**\* .github/**\*
       - name: Deploy to server
         uses: kevinpainchaud/simple-ftp-deploy-action@v1.2.1
         with:
           ftp_host: ${{ secrets.FTP_SERVER }}
           ftp_username: ${{ secrets.FTP_USERNAME }}
           ftp_password: ${{ secrets.FTP_PASSWORD }}
-          local_source_dir: "./versions/"
-          dist_target_dir: "/"
+          local_source_dir: "./dist/"
+          dist_target_dir: "/versions/"
           delete: "true"
           exclude: "'^logs/' '^README.md' '^node_modules/' '^.git/' '^src/' '^.github'"
