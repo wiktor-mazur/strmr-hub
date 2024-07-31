@@ -19,7 +19,7 @@ jobs:
         run: npm run build
       - uses: montudor/action-zip@v1
         with:
-          args: zip -qq -r dist/${{ github.sha }}.zip . -x "./node_modules/\*" "./.git/\*" "./src/\*" "./.github/\*"
+          args: shopt -s globstar && zip -qq -r dist/${{ github.sha }}.zip . -x "node_modules/**" ".git/**" "src/**" ".github/**"
       - name: Deploy to server
         uses: kevinpainchaud/simple-ftp-deploy-action@v1.2.1
         with:
