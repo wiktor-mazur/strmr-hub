@@ -53,7 +53,7 @@ export default function SocialList() {
     return (
         <ul className={styles.main}>
             {socialItems.map(v => (
-                <li className={styles.item}>
+                <li className={styles.item} key={v.name}>
                     <SocialItem {...v}/>
                 </li>
             ))}
