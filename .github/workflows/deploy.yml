@@ -38,4 +38,6 @@ jobs:
             cd domains/taazy.pl
             rm public_nodejs
             ln -s versions/${{ github.sha }} public_nodejs
+            cd public_nodejs
+            npm install --production
             devil www restart taazy.pl
