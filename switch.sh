@@ -5,3 +5,4 @@ rm -f versions/$1.zip
 ln -s versions/$1 public_nodejs
 cd public_nodejs
 npm install --production
+devil www restart taazy.pl
