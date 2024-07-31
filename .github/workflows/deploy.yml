@@ -14,7 +14,7 @@ jobs:
         with:
           node-version: '22.x'
       - name: Installing dependencies
-        run: npm i --production
+        run: npm i
       - name: Build
         run: npm run build
       - name: Deploy to server
@@ -26,4 +26,4 @@ jobs:
           local_source_dir: "./"
           dist_target_dir: "versions/${{ github.sha }}"
           delete: "true"
-          exclude: "'^logs/' '^README.md'"
+          exclude: "'^logs/' '^README.md' '^node_modules/'"
