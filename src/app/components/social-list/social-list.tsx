@@ -16,7 +16,7 @@ const socialItems: SocialItemProps[] = [
         title: "Taazy282",
         subtitle: "instagram.com/taazy282",
         text: "Wpadnij sprawdzić najnowsze informacje o mnie",
-        url: "https://instagram.coim/taazy282",
+        url: "https://instagram.com/taazy282",
         image: "social/instagram.png",
         imageHover: "social/instagram-hover.png",
     },
