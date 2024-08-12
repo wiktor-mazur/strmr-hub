@@ -6,7 +6,7 @@ export class ContentfulClient {
 
     constructor() {
         this.client = createClient({
-            space: process.env.CONTENTFUL_SPACE_ID || "",
+            space: process.env.CONTENTFUL_SPACE || "",
             accessToken: process.env.CONTENTFUL_ACCESS_TOKEN || "",
         });
     }

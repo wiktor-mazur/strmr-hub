@@ -1,15 +1,10 @@
 import styles from "./page.module.css";
 import SocialList from "@/app/components/social-list/social-list";
 import Avatar from "@/app/components/avatar/avatar";
-
-async function getSocials() {
-    const res = await fetch('http://127.0.0.1:3000/api/socials', { next: { revalidate: 30 }})
-
-    return await res.json();
-}
+import { services } from "@/services/services";
 
 export default async function Home() {
-    const socials = await getSocials();
+    const socials = await services.contentful.getSocials();
 
     return (
     <div className={styles.page}>
