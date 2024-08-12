@@ -19,6 +19,7 @@
   height: 100px;
   background: #121212;
   position: relative;
+  flex-shrink: 0;
 }
 
 .image {
@@ -93,6 +94,10 @@
     width: 75px;
     height: 50px;
     background: black;
+  }
+
+  .content {
+    margin-left: 15px;
   }
 
   .image {

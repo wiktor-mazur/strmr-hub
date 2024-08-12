@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@contentful/rich-text-html-renderer": "^16.6.8",
     "@next/env": "^14.2.5",
     "contentful": "^10.13.1",
     "express": "^4.19.2",

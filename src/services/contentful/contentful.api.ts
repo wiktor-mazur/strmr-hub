@@ -1,5 +1,7 @@
-import { ContentfulClientApi, createClient, Asset } from "contentful";
+import { ContentfulClientApi, createClient, Asset, EntrySkeletonType } from "contentful";
 import { Social } from "./types";
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+import { Document } from "@contentful/rich-text-types";
 
 export class ContentfulClient {
     private client: ContentfulClientApi<undefined>;
@@ -24,7 +26,21 @@ export class ContentfulClient {
                icon,
                iconHover,
            } as Social;
-        });
+        }).sort((a, b) => a.order - b.order );
+    }
+
+    public async getAboutMe(): Promise<Document | null> {
+        try {
+            const result = await this.client.getEntries<EntrySkeletonType<Document>>({ content_type: "aboutMe" });
+
+            if (result.total < 1) {
+                throw new Error("Not enough elements.");
+            }
+
+            return result.items[0].fields.content;
+        } catch (e) {
+            return null;
+        }
     }
 
     private parseImage(image: Asset): string {

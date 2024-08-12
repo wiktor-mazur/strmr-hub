@@ -6,4 +6,5 @@ export interface Social {
     url: string;
     icon: string;
     iconHover: string;
+    order: number;
 }
