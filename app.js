@@ -1,5 +1,11 @@
 const express = require('express');
 const next = require('next');
+const nextEnv = require('@next/env');
+
+process.env.NODE_ENV = "production";
+
+const projectDir = process.cwd();
+nextEnv.loadEnvConfig(projectDir);
 
 const dev = process.env.NODE_ENV !== 'production';
 const nextApp = next({ dev });
