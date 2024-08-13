@@ -13,25 +13,42 @@ export class ContentfulClient {
         });
     }
 
-    // @TODO error handling
     public async getSocials(): Promise<Social[]> {
-        const result = await this.client.getEntries({ content_type: "social" });
+        try {
+            const result = await this.client.getEntries({ content_type: "social" });
 
-        return result.items.map((social) => {
-           const icon = this.parseImage(social.fields.icon as Asset);
-           const iconHover = this.parseImage(social.fields.iconHover as Asset);
+            return result.items.map((social) => {
+                const icon = this.parseImage(social.fields.icon as Asset);
+                const iconHover = this.parseImage(social.fields.iconHover as Asset);
 
-           return {
-               ...social.fields,
-               icon,
-               iconHover,
-           } as Social;
-        }).sort((a, b) => a.order - b.order );
+                return {
+                    ...social.fields,
+                    icon,
+                    iconHover,
+                } as Social;
+            }).sort((a, b) => a.order - b.order );
+        } catch (e) {
+            return [];
+        }
     }
 
     public async getAboutMe(): Promise<Document | null> {
         try {
             const result = await this.client.getEntries<EntrySkeletonType<Document>>({ content_type: "aboutMe" });
+
+            if (result.total < 1) {
+                throw new Error("Not enough elements.");
+            }
+
+            return result.items[0].fields.content;
+        } catch (e) {
+            return null;
+        }
+    }
+
+    public async getStreamSchedule(): Promise<Document | null> {
+        try {
+            const result = await this.client.getEntries<EntrySkeletonType<Document>>({ content_type: "streamSchedule" });
 
             if (result.total < 1) {
                 throw new Error("Not enough elements.");

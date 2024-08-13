@@ -6,7 +6,8 @@ import Menu from "@/app/components/menu/menu";
 import React from "react";
 
 export interface BaseLayoutProps {
-    children: React.JSX.Element
+    children: React.JSX.Element;
+    title: string;
 }
 
 export default async function BaseLayout(props: BaseLayoutProps) {
@@ -16,7 +17,7 @@ export default async function BaseLayout(props: BaseLayoutProps) {
     <div className={styles.page}>
         <div className={styles.wrapper}>
             <div className={styles.avatar}>
-                <Avatar/>
+                <Avatar title={props.title} />
             </div>
             <div className={styles.menu}>
                 <Menu />

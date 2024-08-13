@@ -9,6 +9,12 @@ export interface SocialListProps {
 export default function SocialList(props: SocialListProps) {
     return (
         <ul className={styles.main}>
+            {
+                props.socials.length === 0 &&
+                <li className={styles.item}>
+                    Nie znaleziono wpisów
+                </li>
+            }
             {props.socials.map(v => (
                 <li className={styles.item} key={v.socialName}>
                     <SocialItem {...v}/>
