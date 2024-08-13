@@ -1,0 +1,62 @@
+.main {
+  list-style: none;
+  margin: 0;
+  padding: 30px;
+}
+
+.item {
+  margin-bottom: 50px;
+  color: #ffffff;
+}
+
+.item:last-child {
+  margin-bottom: 0;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #B1BCC3;
+  padding: 0 20px;
+}
+
+.titleTop {
+  color: #ffffff;
+}
+
+.video {
+  width: 100%;
+  height: 420px;
+  border-radius: 30px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 0 20px;
+  margin-top: 10px;
+}
+
+.author {
+  color: #B1BCC3;
+  margin: 0;
+  width: 60%;
+}
+
+.visit {
+  float: right;
+  color: #53ED13;
+  margin: 0;
+  font-weight: 500;
+  width: 40%;
+  text-align: right;
+}
+
+.linkImage {
+  width: 10px;
+  height: 10px;
+  transform: translateY(-5px);
+  padding-left: 5px;
+}

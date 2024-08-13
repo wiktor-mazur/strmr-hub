@@ -1,15 +1,8 @@
 import { ContentfulClientApi, createClient, Asset, EntrySkeletonType } from "contentful";
-import { Social } from "./types";
+import { ContentType, Social, Top5Item } from "./types";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import { Document } from "@contentful/rich-text-types";
 import { Routes } from "@/app/routes";
-
-export enum ContentType {
-    Social= 'social',
-    AboutMe = 'aboutMe',
-    StreamSchedule = 'streamSchedule',
-    Top5 = 'top5',
-}
 
 export class ContentfulClient {
     private client: ContentfulClientApi<undefined>;
@@ -65,6 +58,24 @@ export class ContentfulClient {
             return result.items[0].fields.content;
         } catch (e) {
             return null;
+        }
+    }
+
+    public async getTop5(): Promise<Top5Item[]> {
+        try {
+            const result = await this.client.getEntries({ content_type: ContentType.Top5 });
+
+            if (result.total < 1) {
+                return [];
+            }
+
+            return result.items.map((item) => {
+                return {
+                    ...item.fields,
+                } as unknown as Top5Item;
+            }).sort((a, b) => a.order - b.order );
+        } catch (e) {
+            return [];
         }
     }
 
