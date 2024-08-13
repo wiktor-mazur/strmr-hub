@@ -23,6 +23,12 @@ export default function Avatar(props: AvatarProps) {
                     <img src="avatar.png" className={styles.img} alt={props.title}/>
                 </h1>
             </a>
+            <p className={styles.title}>
+                <span className={styles.green}>@</span>taazy
+            </p>
+            <p className={styles.subtitle}>
+                <span className={styles.grey}>Biznes:</span> <a href="mailto:wspolpraca@taazy.pl">wspolpraca@taazy.pl</a>
+            </p>
             <button className={styles.share} title="Share" onClick={doShare}>
                 <img src="share-icon.png" alt="Share" className={styles.shareImg}/>
             </button>
