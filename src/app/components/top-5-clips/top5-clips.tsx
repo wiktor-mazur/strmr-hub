@@ -11,7 +11,7 @@ export default function Top5Clips(props: Top5ClipsProps) {
             {
                 props.items.length === 0 &&
                 <li className={styles.item}>
-                    Nie znaleziono wpisów
+                    <center>Nie znaleziono wpisów</center>
                 </li>
             }
             {props.items.map(v => (
