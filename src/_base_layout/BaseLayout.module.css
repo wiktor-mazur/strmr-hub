@@ -1,16 +1,11 @@
 .page {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
   margin: 0 auto;
 }
 
 .wrapper {
   width: 100%;
-  margin-top: 100px;
-  margin-bottom: 50px;
+  margin-top: 150px;
+  margin-bottom: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -22,7 +17,7 @@
 }
 
 .menu {
-  margin-bottom: 25px;
+  margin-bottom: 30px;
 }
 
 .main {
@@ -36,7 +31,12 @@
 
 
 @media (max-width: 800px) {
+  .wrapper {
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+
   .main {
-    border-radius: 0px;
+    border-radius: 0;
   }
 }

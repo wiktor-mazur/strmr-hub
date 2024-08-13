@@ -11,7 +11,6 @@
     padding: 0 10px;
     margin: 0 10px;
     position: relative;
-
 }
 
 .listItem:after {
@@ -40,4 +39,19 @@
 .link:hover {
     color: #ffffff;
     transition: color 0.3s ease;
+}
+
+@media (max-width: 800px) {
+    .link {
+        font-size: 15px;
+    }
+
+    .listItem {
+        padding: 0 5px;
+        margin: 0 5px;
+    }
+
+    .listItem:after {
+        right: -5px;
+    }
 }
