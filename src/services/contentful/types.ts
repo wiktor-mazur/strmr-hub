@@ -1,3 +1,10 @@
+export enum ContentType {
+    Social= 'social',
+    AboutMe = 'aboutMe',
+    StreamSchedule = 'streamSchedule',
+    Top5 = 'top5',
+}
+
 export interface Social {
     socialName: string;
     title: string;
@@ -7,4 +14,11 @@ export interface Social {
     icon: string;
     iconHover: string;
     order: number;
+}
+
+export interface Top5Item {
+    title: string;
+    order: number;
+    url: string;
+    author: string | null;
 }
