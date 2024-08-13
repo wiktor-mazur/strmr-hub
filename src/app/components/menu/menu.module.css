@@ -55,3 +55,9 @@
         right: -5px;
     }
 }
+
+@media (max-width: 400px) {
+    .link {
+        font-size: 13px;
+    }
+}
