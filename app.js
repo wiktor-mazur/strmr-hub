@@ -1,6 +1,8 @@
 const express = require('express');
 const next = require('next');
 const nextEnv = require('@next/env');
+const http = require("http");
+const url = require("url");
 
 process.env.NODE_ENV = "production";
 
@@ -14,14 +16,14 @@ const handle = nextApp.getRequestHandler();
 const port = 3000;
 
 nextApp.prepare().then(() => {
-    const app = express();
+    http.createServer((req, res) => {
+        const parsedUrl = url.parse(req.url, true);
+        handle(req, res, parsedUrl);
+    }).listen(port);
 
-    app.get('*', (req, res) => {
-        return handle(req, res);
-    });
-
-    app.listen(port, (err) => {
-        if (err) throw err;
-        console.log(`> Ready on localhost:${port}`);
-    });
+    console.log(
+        `> Server listening at http://localhost:${port} as ${
+            dev ? 'development' : process.env.NODE_ENV
+        }`
+    );
 });
