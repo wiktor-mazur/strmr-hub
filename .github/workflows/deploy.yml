@@ -21,6 +21,7 @@ jobs:
           envkey_NODE_ENV: production
           envkey_CONTENTFUL_SPACE: ${{ secrets.CONTENTFUL_SPACE }}
           envkey_CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
+          envkey_REVALIDATE_CACHE_SECRET: ${{ secrets.REVALIDATE_CACHE_SECRET }}
           file_name: .env.production
           fail_on_empty: false
           sort_keys: false
