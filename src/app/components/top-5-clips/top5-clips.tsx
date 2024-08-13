@@ -24,7 +24,7 @@ export default function Top5Clips(props: Top5ClipsProps) {
                     <div className={styles.footer}>
                         {v.author && <p className={styles.author}>Klip stworzony przez: {v.author}</p>}
                         <a className={styles.visit} href={v.url} target="_blank">
-                            Zobacz na Kick
+                            Zobacz na YouTube
                             <img className={styles.linkImage} src="link.png" alt=""/>
                         </a>
                     </div>
