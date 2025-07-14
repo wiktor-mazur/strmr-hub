@@ -1,12 +1,11 @@
 import BaseLayout from "@/_base_layout/BaseLayout";
-import Text from "@/app/components/text/text";
 import { Metadata } from "next";
 import { DEFAULT_TITLE } from "@/app/config";
 import { services } from "@/services/services";
 import Top5Clips from "@/app/components/top-5-clips/top5-clips";
 
 export const metadata: Metadata = {
-    title: "Top 5 | Taazy",
+    title: "Wideo | Taazy",
 };
 
 export default async function Top5() {

@@ -6,10 +6,11 @@
   padding: 15px;
   border: 1px solid #24272C;
   transition: border 0.3s ease;
+  position: relative;
 }
 
 .main:hover {
-  border: 1px solid #53ED13;
+  border: 1px solid #E74FD5;
   transition: border 0.3s ease;
 }
 
@@ -81,6 +82,15 @@
   width: 100%;
 }
 
+.dotDivider {
+  padding: 0 10px;
+}
+
+.category {
+  color: #E74FD5;
+  font-weight: 400;
+}
+
 .linkIcon {
   width: 35px;
   height: 35px;
@@ -115,4 +125,23 @@
   .text {
     font-size: 12px;
   }
+}
+
+.streamStatus {
+  padding: 5px 15px;
+  position: absolute;
+  top: 0;
+  right: 50px;
+  transform: translateY(-50%);
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.streamStatusOnline {
+  background-color: #EB0400;
+}
+
+.streamStatusOffline {
+  background-color: #555555;
 }

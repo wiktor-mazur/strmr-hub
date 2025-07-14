@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
+import {getSubsCount} from "@/services/twitch/twitch.api";
+import {DataProvider} from "@/app/components/data-provider/data-provider";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -9,14 +11,20 @@ export const metadata: Metadata = {
   description: "Wszystkie informacje o mnie w jednym miejscu",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const subsCount = await getSubsCount();
+
   return (
     <html lang="pl">
-      <body className={montserrat.className}>{children}</body>
+      <body className={montserrat.className}>
+        <DataProvider value={{ subsCount }}>
+          {children}
+        </DataProvider>
+      </body>
     </html>
   );
 }

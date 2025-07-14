@@ -14,7 +14,7 @@ export default function Menu() {
                 <a className={styles.link} href={Routes.StreamSchedule}>Harmonogram</a>
             </li>
             <li className={styles.listItem}>
-                <a className={styles.link} href={Routes.Top5}>Top 5</a>
+                <a className={styles.link} href={Routes.Wideo}>Wideo</a>
             </li>
         </ul>
     );

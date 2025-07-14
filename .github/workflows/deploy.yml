@@ -22,6 +22,9 @@ jobs:
           envkey_CONTENTFUL_SPACE: ${{ secrets.CONTENTFUL_SPACE }}
           envkey_CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
           envkey_REVALIDATE_CACHE_SECRET: ${{ secrets.REVALIDATE_CACHE_SECRET }}
+          envkey_TWITCH_CLIENT_ID: ${{ secrets.TWITCH_CLIENT_ID }}
+          envkey_TWITCH_CLIENT_SECRET: ${{ secrets.TWITCH_CLIENT_SECRET }}
+          envkey_TWITCH_BROADCASTER_ID: ${{ secrets.TWITCH_BROADCASTER_ID }}
           file_name: .env.production
           fail_on_empty: false
           sort_keys: false

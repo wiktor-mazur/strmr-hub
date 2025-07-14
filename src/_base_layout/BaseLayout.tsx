@@ -11,8 +11,6 @@ export interface BaseLayoutProps {
 }
 
 export default async function BaseLayout(props: BaseLayoutProps) {
-    const socials = await services.contentful.getSocials();
-
     return (
     <div className={styles.page}>
         <div className={styles.wrapper}>

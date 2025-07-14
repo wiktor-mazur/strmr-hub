@@ -2,7 +2,7 @@ export enum Routes {
     Socials = '/',
     AboutMe = '/o-mnie',
     StreamSchedule = '/harmonogram',
-    Top5 = '/top5',
+    Wideo = '/wideo',
 }
 
 export function getAllRoutes(): string[] {

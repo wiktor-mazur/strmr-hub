@@ -10,10 +10,12 @@ export interface Social {
     title: string;
     subtitle: string;
     description: string;
+    category?: string;
     url: string;
     icon: string;
     iconHover: string;
     order: number;
+    live: boolean | null;
 }
 
 export interface Top5Item {

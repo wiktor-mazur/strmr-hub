@@ -26,6 +26,7 @@ export class ContentfulClient {
                     ...social.fields,
                     icon,
                     iconHover,
+                    live: null
                 } as Social;
             }).sort((a, b) => a.order - b.order );
         } catch (e) {
@@ -88,7 +89,7 @@ export class ContentfulClient {
             case ContentType.StreamSchedule:
                 return [Routes.StreamSchedule];
             case ContentType.Top5:
-                return [Routes.Top5];
+                return [Routes.Wideo];
             default:
                 throw new Error(`Unknown ContentType: ${contentType}.`)
         }

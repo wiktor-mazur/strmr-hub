@@ -4,8 +4,8 @@
 }
 
 .img {
-    width: 165px;
-    height: 165px;
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
 }
 
@@ -20,9 +20,19 @@
     cursor: pointer;
 }
 
+.logoLink {
+    width: 165px;
+    height: 165px;
+    display: block;
+    justify-self: center;
+}
+
 .h1 {
+    width: 100%;
+    height: 100%;
     margin: 0;
     padding: 0;
+    position: relative;
 }
 
 .title {
@@ -32,8 +42,8 @@
     margin: 15px 0 0 0;
 }
 
-.green {
-    color: #53ED13;
+.accent {
+    color: #E74FD5;
 }
 
 .subtitle {
@@ -45,6 +55,17 @@
 
 .grey {
     color: #B1BCC3;
+}
+
+.subs {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #E74FD5;
+    border-radius: 10px;
+    font-size: 15px;
+    padding: 5px 8px;
+    transform: translateX(40%);
 }
 
 @media (max-width: 800px) {

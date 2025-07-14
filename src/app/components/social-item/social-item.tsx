@@ -10,10 +10,34 @@ export default function SocialItem(props: Social) {
             </div>
             <div className={styles.content}>
                 <h2 className={styles.title}>{props.title}</h2>
-                <p className={styles.subtitle}>{props.subtitle}</p>
+                <p className={styles.subtitle}>
+                    {props.subtitle}
+                    {
+                        props.category && (
+                            <>
+                                <span className={styles.dotDivider}>•</span>
+                                <span className={`${styles.category}`} title={props.category}>{props.category}</span>
+                            </>
+                        )
+                    }
+                </p>
                 <p className={styles.text} title={props.description}>{props.description}</p>
             </div>
             <img className={styles.linkIcon} src="link-icon.png" alt={"Go to " + props.socialName} />
+            {
+                props.live === true && (
+                    <div className={`${styles.streamStatus} ${styles.streamStatusOnline}`}>
+                        NA ŻYWO
+                    </div>
+                )
+            }
+            {
+                props.live === false && (
+                    <div className={`${styles.streamStatus} ${styles.streamStatusOffline}`}>
+                        OFFLINE
+                    </div>
+                )
+            }
         </a>
     );
 }
