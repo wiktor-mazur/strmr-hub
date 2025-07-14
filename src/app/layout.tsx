@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
-import {getSubsCount} from "@/services/twitch/twitch.api";
-import {DataProvider} from "@/app/components/data-provider/data-provider";
+import { getFollowersCount } from "@/services/twitch/twitch.api";
+import { DataProvider } from "@/app/components/data-provider/data-provider";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -16,12 +16,12 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const subsCount = await getSubsCount();
+  const followersCount = await getFollowersCount();
 
   return (
     <html lang="pl">
       <body className={montserrat.className}>
-        <DataProvider value={{ subsCount }}>
+        <DataProvider value={{ followersCount }}>
           {children}
         </DataProvider>
       </body>

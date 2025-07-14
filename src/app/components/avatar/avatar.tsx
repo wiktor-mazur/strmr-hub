@@ -24,9 +24,9 @@ export default function Avatar(props: AvatarProps) {
             <a href={Routes.Socials} className={styles.logoLink}>
                 <h1 className={styles.h1}>
                     <img src="avatar.png" className={styles.img} alt={props.title}/>
-                    {Boolean(data.subsCount) && (
+                    {Boolean(data.followersCount) && (
                         <div className={styles.subs}>
-                            SUBS: {data.subsCount}
+                            FOLLOWS: {data.followersCount}
                         </div>
                     )}
                 </h1>

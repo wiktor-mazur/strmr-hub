@@ -3,10 +3,10 @@
 import React, { createContext, useContext } from 'react';
 
 interface GlobalData {
-    subsCount: number | null;
+    followersCount: number | null;
 }
 
-const DataContext = createContext<GlobalData>({ subsCount: null });
+const DataContext = createContext<GlobalData>({ followersCount: null });
 
 export const DataProvider = ({ children, value }: { children: React.ReactNode; value: GlobalData }) => {
     return (

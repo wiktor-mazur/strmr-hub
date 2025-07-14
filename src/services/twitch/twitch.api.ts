@@ -30,10 +30,6 @@ export async function getTwitchStream() {
 
         const jsonData: any = await res.json();
 
-        if (jsonData.status && jsonData.status !== 200) {
-            return null;
-        }
-
         const liveStreams = (jsonData?.data || []).filter((v: any) => v.type === 'live');
 
         if (!liveStreams || !liveStreams.length) {
@@ -52,7 +48,7 @@ export async function getTwitchStream() {
 }
 
 
-export async function getSubsCount(): Promise<number | null> {
+export async function getFollowersCount(): Promise<number | null> {
    try {
        const token = await getToken();
 
